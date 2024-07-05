@@ -1,0 +1,10 @@
+/* Importation des styles de Bootstrap */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css');
+
+/* Importation des styles Tailwind après Bootstrap */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Vos styles personnalisés */
+/* Par exemple, vous pouvez ajouter des classes Tailwind ou personnaliser des styles ici */
