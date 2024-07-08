@@ -34,10 +34,7 @@
             <label for="specialite">Spécialité</label>
             <input type="text" name="specialite" class="form-control" id="specialite" value="{{ $medecin->specialite }}" required>
         </div>
-        <div class="form-group">
-            <label for="tel">Téléphone</label>
-            <input type="tel" name="tel" class="form-control" id="tel" value="{{ $medecin->tel }}" required>
-        </div>
+    
         <button type="submit" class="btn btn-primary">Modifier</button>
     </form>
 </div>

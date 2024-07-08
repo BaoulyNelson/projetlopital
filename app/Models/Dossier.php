@@ -27,4 +27,10 @@ class Dossier extends Model
     {
         return $this->belongsTo(Consultation::class, 'idconsultation');
     }
+
+    public function patient()
+{
+    return $this->belongsTo(Patient::class, 'idconsultation');
 }
+}
+

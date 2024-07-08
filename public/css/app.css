@@ -1,27 +1,8 @@
 /* Importation des styles de Bootstrap */
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css');
 
+/* Importation des styles Tailwind après Bootstrap */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-/* Exemple de style pour les tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #007bff;
-    color: #333;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}

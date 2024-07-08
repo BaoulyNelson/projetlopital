@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Consultation;
@@ -8,27 +7,18 @@ use Illuminate\Http\Request;
 
 class PrescriptionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $prescriptions = Prescription::all();
         return view('prescriptions.index', compact('prescriptions'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $consultations = Consultation::all();
         return view('prescriptions.create', compact('consultations'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -42,5 +32,45 @@ class PrescriptionController extends Controller
                         ->with('success', 'Prescription créée avec succès.');
     }
 
-    // Autres méthodes du CRUD (show, edit, update, destroy) à ajouter
+    public function show(Prescription $prescription)
+    {
+        return view('prescriptions.show', compact('prescription'));
+    }
+
+    public function edit(Prescription $prescription)
+    {
+        $consultations = Consultation::all();
+        return view('prescriptions.edit', compact('prescription', 'consultations'));
+    }
+
+    public function update(Request $request, Prescription $prescription)
+    {
+        $request->validate([
+            'idconsultation' => 'required',
+            'prescription' => 'required',
+        ]);
+
+        $prescription->update($request->all());
+
+        return redirect()->route('prescriptions.index')
+                        ->with('success', 'Prescription mise à jour avec succès.');
+    }
+
+    public function destroy(Prescription $prescription)
+    {
+        return view('prescriptions.delete-confirmation', compact('prescription'));
+    }
+
+    public function showConfirmation(Prescription $prescription)
+    {
+        return view('prescriptions.delete-confirmation', compact('prescription'));
+    }
+
+    public function confirmDestroy(Request $request, Prescription $prescription)
+    {
+        $prescription->delete();
+
+        return redirect()->route('prescriptions.index')
+                        ->with('success', 'Prescription supprimée avec succès.');
+    }
 }

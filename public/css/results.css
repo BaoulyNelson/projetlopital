@@ -1,0 +1,56 @@
+/* resources/css/results.css */
+.hidden {
+  display: none;
+}
+/* Conteneur principal */
+.results-show-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titre */
+  .results-show-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Informations du résultat */
+  .results-show-info {
+    margin-bottom: 30px;
+  }
+  
+  .results-show-info label {
+    font-weight: bold;
+    color: #666;
+    margin-right: 10px;
+  }
+  
+  .results-show-info span {
+    color: #333;
+  }
+  
+  /* Boutons d'action */
+  .results-show-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+  
+  .results-show-actions button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .results-show-actions button:hover {
+    background-color: #0056b3;
+  }

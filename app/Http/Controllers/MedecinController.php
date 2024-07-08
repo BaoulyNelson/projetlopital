@@ -7,24 +7,17 @@ use Illuminate\Http\Request;
 
 class MedecinController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $medecins = Medecin::all();
         return view('medecins.index', compact('medecins'));
     }
 
-   
     public function create()
     {
         return view('medecins.create');
     }
 
- 
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -43,7 +36,6 @@ class MedecinController extends Controller
             ->with('success', 'Médecin créé avec succès.');
     }
 
-  
     public function show(Medecin $medecin)
     {
         return view('medecins.show', compact('medecin'));
@@ -54,7 +46,6 @@ class MedecinController extends Controller
         return view('medecins.edit', compact('medecin'));
     }
 
-  
     public function update(Request $request, Medecin $medecin)
     {
         $validatedData = $request->validate([
@@ -73,8 +64,17 @@ class MedecinController extends Controller
             ->with('success', 'Médecin mis à jour avec succès.');
     }
 
- 
     public function destroy(Medecin $medecin)
+    {
+        return view('medecins.delete-confirmation', compact('medecin'));
+    }
+
+    public function showConfirmation(Medecin $medecin)
+    {
+        return view('medecins.delete-confirmation', compact('medecin'));
+    }
+
+    public function confirmDestroy(Request $request, Medecin $medecin)
     {
         $medecin->delete();
 

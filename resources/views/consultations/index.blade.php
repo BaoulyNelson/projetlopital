@@ -7,12 +7,11 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Médecin</th>
-                <th>Patient</th>
+                <th>ID Médecin</th>
+                <th>ID Patient</th>
                 <th>Poids</th>
                 <th>Hauteur</th>
-                <th>Diagnostique</th>
+                <th>Diagnostic</th>
                 <th>Date de Consultation</th>
                 <th>Actions</th>
             </tr>
@@ -20,9 +19,8 @@
         <tbody>
             @foreach($consultations as $consultation)
             <tr>
-                <td>{{ $consultation->id }}</td>
-                <td>{{ $consultation->medecin->nom }} {{ $consultation->medecin->prenom }}</td>
-                <td>{{ $consultation->patient->nom }} {{ $consultation->patient->prenom }}</td>
+                <td>{{ $consultation->idmedecin }}</td>
+                <td>{{ $consultation->idpatient }}</td>
                 <td>{{ $consultation->poids }}</td>
                 <td>{{ $consultation->hauteur }}</td>
                 <td>{{ $consultation->diagnostique }}</td>
@@ -30,11 +28,7 @@
                 <td>
                     <a href="{{ route('consultations.show', $consultation->id) }}" class="btn btn-info">Voir</a>
                     <a href="{{ route('consultations.edit', $consultation->id) }}" class="btn btn-warning">Modifier</a>
-                    <form action="{{ route('consultations.destroy', $consultation->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                    </form>
+                    <a href="{{ route('consultations.confirmDestroy', $consultation->id) }}" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
             @endforeach

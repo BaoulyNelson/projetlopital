@@ -7,7 +7,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Sexe</th>
@@ -19,7 +18,6 @@
         <tbody>
             @foreach($patients as $patient)
             <tr>
-                <td>{{ $patient->id }}</td>
                 <td>{{ $patient->nom }}</td>
                 <td>{{ $patient->prenom }}</td>
                 <td>{{ $patient->sexe }}</td>
@@ -28,11 +26,7 @@
                 <td>
                     <a href="{{ route('patients.show', $patient->id) }}" class="btn btn-info">Voir</a>
                     <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-warning">Modifier</a>
-                    <form action="{{ route('patients.destroy', $patient->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                    </form>
+                    <a href="{{ route('patients.confirmDestroy', $patient->id) }}" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
             @endforeach

@@ -21,4 +21,9 @@ class Patient extends Model
         'tel',
         'adresse',
     ];
+
+    public function dossiers()
+{
+    return $this->hasMany(Dossier::class, 'idconsultation');
+}
 }

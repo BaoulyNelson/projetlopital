@@ -22,11 +22,7 @@
                 <td>
                     <a href="{{ route('dossiers.show', $dossier->id) }}" class="btn btn-info">Voir</a>
                     <a href="{{ route('dossiers.edit', $dossier->id) }}" class="btn btn-warning">Modifier</a>
-                    <form action="{{ route('dossiers.destroy', $dossier->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                    </form>
+                    <a href="{{ route('dossiers.confirmDestroy', $dossier->id) }}" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
             @endforeach

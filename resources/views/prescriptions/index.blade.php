@@ -20,11 +20,7 @@
                 <td>
                     <a href="{{ route('prescriptions.show', $prescription->id) }}" class="btn btn-info">Voir</a>
                     <a href="{{ route('prescriptions.edit', $prescription->id) }}" class="btn btn-warning">Modifier</a>
-                    <form action="{{ route('prescriptions.destroy', $prescription->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                    </form>
+                    <a href="{{ route('prescriptions.confirmDestroy', $prescription->id) }}" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
             @endforeach
