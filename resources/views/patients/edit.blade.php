@@ -15,9 +15,12 @@
             <input type="text" name="prenom" class="form-control" id="prenom" value="{{ $patient->prenom }}" required>
         </div>
         <div class="form-group">
-            <label for="sexe">Sexe</label>
-            <input type="text" name="sexe" class="form-control" id="sexe" value="{{ $patient->sexe }}" required>
-        </div>
+        <label for="sexe">Sexe</label>
+        <select name="sexe" class="form-control" id="sexe" required>
+            <option value="M" {{ $patient->sexe == 'M' ? 'selected' : '' }}>M</option>
+            <option value="F" {{ $patient->sexe == 'F' ? 'selected' : '' }}>F</option>
+        </select>
+    </div>
         <div class="form-group">
             <label for="tel">Téléphone</label>
             <input type="text" name="tel" class="form-control" id="tel" value="{{ $patient->tel }}" required>

@@ -8,7 +8,8 @@
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger">Oui, Supprimer</button>
-        <a href="{{ route('medecins.index') }}" class="btn btn-secondary">Annuler</a>
     </form>
+    <br>
+    <a href="{{ route('medecins.index') }}" class="btn btn-secondary">Annuler</a>
 </div>
 @endsection

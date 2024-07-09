@@ -78,8 +78,9 @@
     @endif
 
     <div class="results-show-actions">
-        <button>Retour</button>
-        <button>Exporter</button>
-    </div>
+    <button onclick="javascript:history.back();">Retour</button>
+    <button>Exporter</button>
+</div>
+
 </div>
 @endsection

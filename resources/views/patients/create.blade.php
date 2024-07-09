@@ -16,8 +16,12 @@
             </div>
             <div class="form-group">
                 <label for="sexe">Sexe</label>
-                <input type="text" name="sexe" class="form-control" id="sexe" required>
+                <select name="sexe" class="form-control" id="sexe" required>
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                </select>
             </div>
+
             <div class="form-group">
                 <label for="tel">Téléphone</label>
                 <input type="text" name="tel" class="form-control" id="tel" required>

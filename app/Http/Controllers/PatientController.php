@@ -22,17 +22,17 @@ class PatientController extends Controller
         $validatedData = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'sexe' => 'required',
+            'sexe' => 'required|in:M,F',
             'tel' => 'required',
             'adresse' => 'required',
         ]);
-
+    
         Patient::create($validatedData);
-
+    
         return redirect()->route('patients.index')
-                        ->with('success', 'Patient ajouté avec succès.');
+                         ->with('success', 'Patient ajouté avec succès.');
     }
-
+    
     public function show(Patient $patient)
     {
         return view('patients.show', compact('patient'));
@@ -48,7 +48,7 @@ class PatientController extends Controller
         $validatedData = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'sexe' => 'required',
+            'sexe' => 'required|in:M,F',
             'tel' => 'required',
             'adresse' => 'required',
         ]);
@@ -75,5 +75,18 @@ class PatientController extends Controller
 
         return redirect()->route('patients.index')
                         ->with('success', 'Patient supprimé avec succès.');
+    }
+
+    public function consultations()
+    {
+        // Logique pour lister les consultations d'un patient
+        $patients = Patient::with('consultations')->get();
+        return view('patients.consultations', compact('patients'));
+    }
+
+    public function search()
+    {
+        // Logique pour rechercher un dossier de patient
+        return view('patients.search');
     }
 }

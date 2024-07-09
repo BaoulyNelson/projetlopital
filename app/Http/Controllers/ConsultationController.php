@@ -84,4 +84,10 @@ class ConsultationController extends Controller
         return redirect()->route('consultations.index')
                         ->with('success', 'Consultation supprimée avec succès.');
     }
+
+    public function verify()
+    {
+        // Logique pour vérifier une consultation
+        return view('consultations.verify');
+    }
 }

@@ -13,143 +13,108 @@ body {
     padding: 20px;
     color: #fff;
     text-align: center;
-    overflow-x: hidden;
+}
+.circle-image {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px; /* Ajustez la taille de l'image selon vos besoins */
+    height: 100px; /* Ajustez la taille de l'image selon vos besoins */
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1000;
 }
 
-.header h1 {
-    font-size: 32px;
-    margin: 0;
+.circle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.header .content {
-    margin-top: 5px; /* Réduit l'espace en haut sur les petits écrans */
+/* Media query pour les petits écrans (max-width: 768px) */
+@media (max-width: 768px) {
+    .circle-image {
+        top: 0; /* Position à l'extrémité supérieure de la fenêtre */
+        left: 0; /* Position à l'extrémité gauche de la fenêtre */
+        margin: 0; /* Supprime les marges */
+        width: 80px; /* Taille réduite pour les petits écrans */
+        height: 90px; /* Taille réduite pour les petits écrans */
+        z-index: 1000;
+    }
+}
+
+.content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 
-.header .links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px; /* Default gap for large screens */
+h1 {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+.custom-title {
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 48px; /* Adjust size as needed */
+    color: white; /* Adjust color as needed */
 }
 
-.header .links a {
+.hamburger-icon,
+.close-icon {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; /* Aligner les éléments verticalement */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.links a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    padding: 5px 10px;
+    transition: background 0.3s, transform 0.3s; /* Ajouter la transition pour la transformation */
 }
 
-.header .links a:hover {
-    background-color: #016a4a;
+.links a:hover {
+    background: green;
+    transform: scale(1.1); /* Agrandir légèrement le lien au survol */
+}
+.search-icon {
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
 }
 
-/* resources/css/results.css */
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
 .hidden {
     display: none;
 }
 
-.search-icon {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    cursor: pointer;
-}
-/* Styles pour les grands écrans */
-.search-container {
-    display: flex;
-    align-items: center;
-  }
-  .form-control {
-    width: 300px;
-    margin-right: 10px;
-  }
-  .btn {
-    width: 100px;
-  }
-  
-  /* Styles pour les petits écrans */
-  @media (max-width: 767px) {
-    .search-container {
-      flex-wrap: wrap;
-    }
-    .form-control {
-      flex-grow: 1;
-      width: 70%;
-      margin-right: 5px;
-    }
-    .btn {
-      flex-shrink: 0;
-      width: 30%;
-    }
-  }
-  
-.hamburger-icon,
-.close-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-    z-index: 1000;
-}
 
-@media (max-width: 600px) {
-    .header h1 {
-        font-size: 24px;
-    }
-
-    .header .content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .header .links {
-        position: fixed;
-        top: 0;
-        right: -50%;
-        width: 50%;
-        height: 100%;
-        background-color: #00b894;
-        padding: 20px;
-        box-sizing: border-box;
-        transition: right 0.3s ease-in-out;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        z-index: 1000;
-        gap: 10px; /* Réduit l'espacement entre les liens sur les petits écrans */
-        justify-content: flex-start; /* Aligne les liens à gauche sur les petits écrans */
-    }
-
-    .header .links.open {
-        right: 0;
-    }
- 
-/* Affichage du menu déroulant sur les petits écrans */
-@media (max-width: 767px) {
-    .links {
-      display: none;
-    }
-    .links.open {
-      display: block;
-      overflow-y: scroll;
-
-    }
-  }
-    .header .links a {
-        display: block;
-        margin-bottom: 10px;
-        overflow-y: scroll;
-    }
-
+/* Mobile view adjustments */
+@media (max-width: 768px) {
     .hamburger-icon {
         display: block;
     }
@@ -158,61 +123,43 @@ body {
         display: none;
     }
 
-    .header .links.open~.close-icon {
-        display: block;
-    }
-
-    .header .links.open~.hamburger-icon {
+    .links {
         display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #00b894;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        transition: display 0.3s ease-in-out;
     }
-}
 
-.fond-blanc {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
+    .links.open {
+        display: flex;
+    }
 
-/* Bouton pour remonter en haut */
-#myBtn {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-}
+    .links a {
+        padding: 10px;
+        font-size: 18px;
+        width: 100%;
+        text-align: left;
+    }
 
-#myBtn:hover {
-    background-color: #555;
-}
+    .content {
+        align-items: flex-start;
+    }
 
-footer {
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    overflow-x: hidden;
-}
-
-
-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
+    .links.open::before {
+        display: block;
+        color: white;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
+    }
 }

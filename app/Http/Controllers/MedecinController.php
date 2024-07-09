@@ -23,7 +23,7 @@ class MedecinController extends Controller
         $validatedData = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'sexe' => 'required',
+            'sexe' => 'required|in:M,F',
             'tel' => 'required',
             'adresse' => 'required',
             'email' => 'required|email',
@@ -51,7 +51,7 @@ class MedecinController extends Controller
         $validatedData = $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            'sexe' => 'required',
+            'sexe' => 'required|in:M,F',
             'tel' => 'required',
             'adresse' => 'required',
             'email' => 'required|email',
@@ -81,4 +81,14 @@ class MedecinController extends Controller
         return redirect()->route('medecins.index')
             ->with('success', 'Médecin supprimé avec succès.');
     }
+
+    public function specialties()
+    {
+        // Récupérer les médecins organisés par spécialité
+        $medecinsBySpecialty = Medecin::all()->groupBy('specialite');
+
+        return view('medecins.specialties', compact('medecinsBySpecialty'));
+    }
+
+    
 }
