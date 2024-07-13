@@ -1,0 +1,211 @@
+html,
+body {
+    color: black; /* Définit la couleur du texte */
+    font-family: 'arial', sans-serif; /* Définit la police de caractères */
+    font-weight: 200; /* Définit l'épaisseur de la police */
+      margin: 0; /* Supprime les marges par défaut du corps et de l'élément html */
+      overflow-x: hidden;
+}
+body {
+    background-image: url('/public/Images/logo.jpg');
+    background-size: cover; /* Pour ajuster l'image à la taille de l'écran */
+    background-position: center; /* Pour centrer l'image */
+    background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+}
+
+.top-header {
+    background-color: #102f4e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.top-nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.date-time {
+    position: absolute;
+    top: 0;
+    /* Position en haut */
+    right: 0;
+    /* Position à droite */
+    font-size: 14px;
+    margin: 10px;
+    /* Ajouter un peu de marge pour l'espacement */
+}
+
+header {
+    background-color: #227dea;
+    color: white;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px; /* Valeur réduite */
+}
+
+
+.hamburger-icon,
+.search-icon,
+.login {
+    cursor: pointer;
+}
+
+.login {
+     /* Position à droite */
+    color: white;
+    text-decoration: none;
+    float: right;
+    margin-right: 20px; /* Ajustez cette valeur selon vos besoins */
+}
+
+
+/* Styles pour le conteneur du titre et des langues */
+.header-title-container {
+    text-align: center; /* Centre les éléments horizontalement */
+    color: white; /* Couleur blanche pour le texte */
+    padding: 20px 0; /* Espacement haut et bas */
+}
+
+/* Styles pour les liens de langue */
+.language-switch {
+    margin-bottom: 10px; /* Espacement entre les liens de langue et le titre */
+}
+
+.language-switch a {
+    color: white; /* Couleur blanche pour les liens de langue */
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    margin: 0 10px; /* Espacement entre les liens */
+}
+
+.language-switch a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Styles pour le titre */
+.custom-title {
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 32px; /* Taille de police du titre */
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #007bff;
+    padding: 10px 0;
+}
+
+.main-nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+  /* Afficher l'icône hamburger */
+  .hamburger-icon {
+    display: none;
+}
+
+
+
+/* Affichage uniquement sur petits écrans */
+@media (max-width: 768px) {
+    .search-icon {
+        position: absolute;
+        top: 20px; /* Ajustez selon votre besoin */
+        left: 20px; /* Ajustez selon votre besoin */
+        z-index: 2;
+        color: black;
+    }
+
+  
+
+    /* Cacher les éléments dans .top-header */
+    .top-header {
+        display: none;
+    }
+    .sidebar {
+        width: 0;
+    }
+
+    .sidebar.open {
+        width: 50%;
+    }
+
+    .sidebar .search-form {
+        padding: 10px;
+        width: 100%; /* Assurez-vous que la barre de recherche a la même largeur que le panneau latéral ouvert */
+        box-sizing: border-box;
+    }
+}
+
+/* Styles pour le panneau latéral */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: red;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.search-icon {
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+.btn:hover {
+    background-color: red;
+    color: black;
+}
+
+
+.footer {
+    flex-shrink: 0;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+}

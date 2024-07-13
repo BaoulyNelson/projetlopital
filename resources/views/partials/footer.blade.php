@@ -11,5 +11,8 @@
         <polyline points="5 12 12 5 19 12"></polyline>
     </svg>
 </button>
+<div class="language-switch">
+    <a href="{{ route('set-locale', ['locale' => 'fr']) }}">FRANÇAIS</a> | <a href="{{ route('set-locale', ['locale' => 'en']) }}">ENGLISH</a>
+</div>
 
     </footer>
