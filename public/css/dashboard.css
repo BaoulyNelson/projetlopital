@@ -1,0 +1,118 @@
+.text-right a {
+    background-color: blue;
+    color: #fff;
+    padding: 5px 10px; /* Ajoute un padding pour mieux délimiter le fond */
+    text-decoration: none; /* Supprime la soulignement par défaut des liens */
+    background-clip: content-box; /* Limite le fond à la zone de contenu */
+}
+
+.text-right a:hover {
+    background-color: #c82333;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: #007bff;
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #575d63;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 1.5rem;
+    margin-left: 50px;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+
+.list-group-item-action {
+    margin-bottom: 15px;
+}
+
+.feature-link {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.feature-icon {
+    margin-right: 10px;
+}
+
+.features-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features-list li {
+    font-size: 1.2em;
+    color: #555;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.features-list li i {
+    margin-right: 10px;
+    color: #2575fc;
+}
+
+.features-list li:hover {
+    transform: scale(1.05);
+    color: green;
+}
+
+/* Suppression des text-decoration redondants */
+a.feature-link,
+.features-list li,
+.features-list li i {
+    text-decoration: none;
+}
+
+

@@ -1,12 +1,33 @@
 @extends('layouts.app')
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
-   
+<link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+<!-- Inclure le script externe -->
+@push('scripts')
+<script src="{{ asset('js/panneauDashboard.js') }}"></script>
+@endpush
+
 @endsection
+
 @section('content')
+<div class="text-right">
+    <a href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) { 
+                    document.getElementById('logout-form').submit();
+                }">
+        Se déconnecter
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+</div>
+
+
 <div class="container">
     <h1>Tableau de Bord</h1>
     <div class="row">
+
+      
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
@@ -65,5 +86,7 @@
             </div>
         </div>
     </div>
+
 </div>
+@stack('scripts')
 @endsection

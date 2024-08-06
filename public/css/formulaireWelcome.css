@@ -1,0 +1,29 @@
+.search-icon {
+    cursor: pointer;
+    color: white;
+   
+}
+
+
+/* Pour les petits écrans */
+@media (max-width: 600px) {
+    .search-icon,#searchForm {
+       color: black;
+       z-index: 2;
+    }
+    
+}
+.form-inline {
+    display: flex;
+    align-items: center;
+}
+.form-inline .form-control {
+    flex: 1;
+}
+.form-inline .btn {
+    margin-left: 10px;
+}
+
+.hidden {
+    display: none;
+}

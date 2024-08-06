@@ -1,0 +1,41 @@
+/* Ajustements pour les petits écrans */
+@media (max-width: 768px) {
+  .navbar-top,.navbar-nav,.search-icon, .nav-link {
+      font-size: 8px; /* Réduit la taille de la police */
+      padding: 5px 10px; /* Réduit le padding */
+  }
+
+  .header-main .logo {
+      font-size: 24px; /* Réduit la taille du logo si nécessaire */
+  }
+}
+
+/* Styles pour la barre de navigation en haut */
+.navbar-top {
+  background-color: #1B6FF0; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  padding: 10px 0; /* Ajoute de l'espace intérieur */
+  width: 100%; /* Assure qu'il occupe toute la largeur disponible */
+  z-index: 1000; /* Assure que la barre de navigation reste au-dessus */
+  display: flex;
+  justify-content: center; /* Centre les éléments horizontalement */
+  position: relative; /* Assure que les éléments enfants peuvent être positionnés absolument */
+}
+
+/* Styles pour les actions utilisateur */
+.user-actions {
+  position: absolute; /* Positionne l'élément de manière absolue */
+  top: 10px; /* Ajuste la position verticale */
+  right: 20px; /* Ajuste la position horizontale */
+  color: #fff; /* Couleur du texte en blanc */
+  display: flex; /* Utilise Flexbox pour aligner les éléments en ligne */
+  align-items: center; /* Aligne verticalement les éléments au centre */
+}
+
+.user-actions a {
+  cursor: pointer; /* Change le curseur au survol */
+  color: #fff; /* Couleur du texte en blanc */
+  margin-left: 5px; /* Espace entre les éléments */
+  text-decoration: none; /* Supprime la sous-ligne par défaut des liens */
+}
+

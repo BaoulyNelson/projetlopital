@@ -84,9 +84,24 @@ class PatientController extends Controller
         return view('patients.consultations', compact('patients'));
     }
 
-    public function search()
+   /**
+     * Affiche le formulaire de recherche.
+     */
+    public function showSearchForm()
     {
-        // Logique pour rechercher un dossier de patient
         return view('patients.search');
+    }
+
+    /**
+     * Traite la recherche de patient.
+     */
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        // Exemple de recherche dans la base de données
+        $results = Patient::where('name', 'like', "%{$query}%")->get();
+
+        return view('patients.search', compact('results'));
     }
 }

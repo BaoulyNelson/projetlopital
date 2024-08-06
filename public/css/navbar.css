@@ -1,0 +1,45 @@
+/* Styles pour les éléments de la barre de navigation */
+.navbar-nav {
+  display: flex;
+  justify-content: center; /* Centre les éléments horizontalement */
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+
+}
+
+
+/* Assurez-vous que les éléments de la liste ne forcent pas les retours à la ligne */
+.navbar-nav .nav-item {
+  white-space: nowrap;
+  margin: 0 10px; /* Espacement horizontal uniforme entre les éléments */
+}
+
+/* Styles pour les liens dans la barre de navigation */
+.nav-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  display: block;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition pour la couleur et l'effet de mise à l'échelle */
+
+}
+
+
+.nav-link:hover {
+  transform: scale(1.1); /* Augmente la taille des liens à 110% */
+}
+
+.nav-link.active {
+  color: #ffcc00;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+
+
+

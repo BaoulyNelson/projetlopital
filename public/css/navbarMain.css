@@ -1,0 +1,18 @@
+/* Styles pour l'en-tête principal */
+.header-main {
+  display: flex;
+  flex-direction: column; /* Empile les éléments verticalement */
+  align-items: center; /* Centre les éléments horizontalement */
+  background-color: #1B6FF0; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  width: 100%; /* Assure qu'il occupe toute la largeur disponible */
+  padding: 10px 0; /* Ajoute un peu d'espace intérieur */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile pour plus de profondeur */
+}
+
+/* Styles pour le logo dans l'en-tête */
+.header-main .logo {
+  font-family: 'Old English Text MT', serif; /* Police spécifique pour le logo */
+  font-size: 36px; /* Taille du texte du logo */
+  margin-bottom: 10px; /* Ajoute de l'espace sous le logo */
+}

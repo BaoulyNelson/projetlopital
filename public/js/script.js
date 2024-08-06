@@ -7,39 +7,7 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
-function toggleMenu() {
-    const links = document.querySelector('.links');
-    const [hamburgerIcon, closeIcon] = [document.querySelector('.hamburger-icon'), document.querySelector('.close-icon')];
 
-    links.classList.toggle('open');
-
-    if (links.classList.contains('open')) {
-        hamburgerIcon.style.display = 'none';
-        closeIcon.style.display = 'block';
-    } else {
-        hamburgerIcon.style.display = 'block';
-        closeIcon.style.display = 'none';
-    }
-}
-
-function resetIcons() {
-    const [hamburgerIcon, closeIcon] = [document.querySelector('.hamburger-icon'), document.querySelector('.close-icon')];
-    const links = document.querySelector('.links');
-
-    if (window.innerWidth > 768) {
-        hamburgerIcon.style.display = 'none';
-        closeIcon.style.display = 'none';
-        links.classList.remove('open');
-    } else {
-        if (links.classList.contains('open')) {
-            hamburgerIcon.style.display = 'none';
-            closeIcon.style.display = 'block';
-        } else {
-            hamburgerIcon.style.display = 'block';
-            closeIcon.style.display = 'none';
-        }
-    }
-}
 
 // Call resetIcons on window resize
 window.addEventListener('resize', resetIcons);
@@ -48,12 +16,14 @@ window.addEventListener('resize', resetIcons);
 document.addEventListener('DOMContentLoaded', resetIcons);
 
 function toggleSearchForm() {
-    var searchForm = document.querySelector('form');
+    const searchForm = document.getElementById('searchForm');
     searchForm.classList.toggle('hidden');
+
     if (!searchForm.classList.contains('hidden')) {
-        document.querySelector('#search-input').focus();
+        document.getElementById('search-input').focus();
     }
 }
+
 
 let lastScrollTop = 0;
 
@@ -76,8 +46,5 @@ function topFunction() {
     document.documentElement.scrollTop = 0; // Pour Chrome, Firefox, IE et Opera
 }
 
-// Fonction pour ouvrir/fermer le panneau latéral
-function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('open');
-}
+
+

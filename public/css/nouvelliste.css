@@ -1,42 +1,25 @@
 html,
 body {
-    color: black; /* Définit la couleur du texte */
-    font-family: 'arial', sans-serif; /* Définit la police de caractères */
-    font-weight: 200; /* Définit l'épaisseur de la police */
-      margin: 0; /* Supprime les marges par défaut du corps et de l'élément html */
-      overflow-x: hidden;
-}
-body {
-    background-image: url('/public/Images/logo.jpg');
-    background-size: cover; /* Pour ajuster l'image à la taille de l'écran */
-    background-position: center; /* Pour centrer l'image */
-    background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+    color: black;
+    /* Définit la couleur du texte */
+    font-family: 'arial', sans-serif;
+    /* Définit la police de caractères */
+    font-weight: 200;
+    /* Définit l'épaisseur de la police */
+    margin: 0;
+    /* Supprime les marges par défaut du corps et de l'élément html */
+    overflow-x: hidden;
 }
 
-.top-header {
-    background-color: #102f4e;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 20px;
-}
-
-.top-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-}
 
 .date-time {
     position: absolute;
     top: 0;
-    /* Position en haut */
-    right: 0;
-    /* Position à droite */
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 14px;
-    margin: 10px;
-    /* Ajouter un peu de marge pour l'espacement */
+    margin-top: 2px;
+    /* Ajustez la marge supérieure si nécessaire */
 }
 
 header {
@@ -44,56 +27,55 @@ header {
     color: white;
 }
 
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px; /* Valeur réduite */
-}
 
-
-.hamburger-icon,
 .search-icon,
 .login {
     cursor: pointer;
 }
 
 .login {
-     /* Position à droite */
-    color: white;
+    position: absolute;
+    top: 50px;
+    /* Ajustez cette valeur pour déplacer le formulaire vers le bas */
+    right: 20px;
+    padding: 10px;
     text-decoration: none;
-    float: right;
-    margin-right: 20px; /* Ajustez cette valeur selon vos besoins */
+    color: white;
+}
+
+
+/* Pour les petits écrans */
+@media (max-width: 600px) {
+    .header-title-container {
+        position: relative;
+    }
+
+    .login {
+        position: absolute;
+        top: 7px;
+
+    }
 }
 
 
 /* Styles pour le conteneur du titre et des langues */
 .header-title-container {
-    text-align: center; /* Centre les éléments horizontalement */
-    color: white; /* Couleur blanche pour le texte */
-    padding: 20px 0; /* Espacement haut et bas */
+    text-align: center;
+    /* Centre les éléments horizontalement */
+    color: white;
+    /* Couleur blanche pour le texte */
+    padding: 20px 0;
+    /* Espacement haut et bas */
 }
 
-/* Styles pour les liens de langue */
-.language-switch {
-    margin-bottom: 10px; /* Espacement entre les liens de langue et le titre */
-}
-
-.language-switch a {
-    color: white; /* Couleur blanche pour les liens de langue */
-    text-decoration: none; /* Supprime le soulignement par défaut */
-    margin: 0 10px; /* Espacement entre les liens */
-}
-
-.language-switch a:hover {
-    text-decoration: underline; /* Soulignement au survol */
-}
 
 /* Styles pour le titre */
 .custom-title {
     font-family: 'UnifrakturCook', cursive;
-    font-size: 32px; /* Taille de police du titre */
-    margin: 0; /* Supprime les marges par défaut */
+    font-size: 32px;
+    /* Taille de police du titre */
+    margin: 0;
+    /* Supprime les marges par défaut */
 }
 
 
@@ -109,98 +91,49 @@ header {
     margin: 0 15px;
     text-decoration: none;
 }
-  /* Afficher l'icône hamburger */
-  .hamburger-icon {
-    display: none;
+.main-nav a:hover {
+    background: red;
+    transform: scale(1.1);
+    /* Agrandir légèrement le lien au survol */
 }
 
-
-
-/* Affichage uniquement sur petits écrans */
-@media (max-width: 768px) {
-    .search-icon {
-        position: absolute;
-        top: 20px; /* Ajustez selon votre besoin */
-        left: 20px; /* Ajustez selon votre besoin */
-        z-index: 2;
-        color: black;
-    }
-
-  
-
-    /* Cacher les éléments dans .top-header */
-    .top-header {
-        display: none;
-    }
-    .sidebar {
-        width: 0;
-    }
-
-    .sidebar.open {
-        width: 50%;
-    }
-
-    .sidebar .search-form {
-        padding: 10px;
-        width: 100%; /* Assurez-vous que la barre de recherche a la même largeur que le panneau latéral ouvert */
-        box-sizing: border-box;
-    }
-}
-
-/* Styles pour le panneau latéral */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: white;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: black;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    color: red;
-}
-
-.sidebar .close-btn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-.search-icon {
-    color: white;
-    cursor: pointer;
-    padding: 5px 10px;
+.kpi-section {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.kpi-card {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 22%;
+    text-align: center;
+}
+
+.charts-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    width: 30%;
 }
 
 
-.hidden {
-    display: none;
+/* Media query pour les écrans de taille moyenne à petite */
+@media screen and (max-width: 768px) {
+
+    /* Ajustements pour les éléments dans .top-header sur les petits écrans */
+    .top-header {
+        flex-direction: column;
+        /* Change la direction en colonne pour les petits écrans */
+        align-items: center;
+        /* Centre les éléments verticalement */
+    }
 }
-
-
-.btn:hover {
-    background-color: red;
-    color: black;
-}
-
 
 .footer {
     flex-shrink: 0;

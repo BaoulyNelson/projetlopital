@@ -1,34 +1,12 @@
-html,
-body {
-    background-color: white; /* Définit la couleur de fond de la page */
-    color: black; /* Définit la couleur du texte */
-    font-family: 'arial', sans-serif; /* Définit la police de caractères */
-    font-weight: 200; /* Définit l'épaisseur de la police */
-      margin: 0; /* Supprime les marges par défaut du corps et de l'élément html */
-    overflow-x: hidden; /* Cache la barre de défilement horizontale */
-}
-.date-time {
-    position: absolute;
-    top: 0; /* Position en haut */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    margin: 10px;
-}
 
-
-.header {
-    background-color: #00b894;
-    padding: 20px;
-    color: #fff;
-    text-align: center;
-}
 .circle-image {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 100px; /* Ajustez la taille de l'image selon vos besoins */
-    height: 100px; /* Ajustez la taille de l'image selon vos besoins */
+    width: 100px;
+    /* Ajustez la taille de l'image selon vos besoins */
+    height: 100px;
+    /* Ajustez la taille de l'image selon vos besoins */
     border-radius: 50%;
     overflow: hidden;
     z-index: 1000;
@@ -42,37 +20,22 @@ body {
 
 
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-h1 {
-    margin: 0;
-    padding: 10px 0;
-    text-align: center;
-}
 .custom-title {
     font-family: 'UnifrakturCook', cursive;
-    font-size: 48px; /* Adjust size as needed */
-    color: white; /* Adjust color as needed */
+    font-size: 48px;
+    /* Adjust size as needed */
+    color: white;
+    /* Adjust color as needed */
 }
 
-.hamburger-icon,
-.close-icon {
-    display: none;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
+
 
 .links {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; /* Aligner les éléments verticalement */
+    align-items: center;
+    /* Aligner les éléments verticalement */
     gap: 15px;
     margin-top: 10px;
 }
@@ -80,101 +43,95 @@ h1 {
 .links a {
     color: white;
     text-decoration: none;
-    padding: 5px 10px;
-    transition: background 0.3s, transform 0.3s; /* Ajouter la transition pour la transformation */
+    padding: 5px 15px;
+    transition: background 0.3s, transform 0.3s;
+    /* Ajouter la transition pour la transformation */
 }
 
 .links a:hover {
     background: green;
-    transform: scale(1.1); /* Agrandir légèrement le lien au survol */
-}
-.search-icon {
-    color: white;
-    cursor: pointer;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
+    transform: scale(1.1);
+    /* Agrandir légèrement le lien au survol */
 }
 
-.form-group {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-.hidden {
-    display: none;
-}
+/* Styles pour grands écrans */
+@media (min-width: 769px) {
 
-
-.btn:hover {
-    background-color: red;
-    color: black;
+    .hamburger-icon,
+    .close-icon {
+        display: none;
+        /* Masquer l'icône hamburger sur grands écrans */
+    }
 }
-
 
 /* Mobile view adjustments */
 @media (max-width: 768px) {
     .circle-image {
-        top: 0; /* Position à l'extrémité supérieure de la fenêtre */
-        left: 0; /* Position à l'extrémité gauche de la fenêtre */
-        margin: 0; /* Supprime les marges */
-        width: 80px; /* Taille réduite pour les petits écrans */
-        height: 90px; /* Taille réduite pour les petits écrans */
+        top: 0;
+        /* Position à l'extrémité supérieure de la fenêtre */
+        left: 0;
+        /* Position à l'extrémité gauche de la fenêtre */
+        margin: 0;
+        /* Supprime les marges */
+        width: 80px;
+        /* Taille réduite pour les petits écrans */
+        height: 90px;
+        /* Taille réduite pour les petits écrans */
         z-index: 1000;
     }
-    .hamburger-icon {
-        display: block;
-    }
+}
 
-    .close-icon {
-        display: none;
-    }
-
+/* Styles pour petits écrans */
+@media (max-width: 768px) {
     .links {
         display: none;
-        flex-direction: column;
-        align-items: flex-start;
+        /* Masquer les liens par défaut sur petits écrans */
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%;
+        /* Déplacer le panneau en dehors de la vue */
         width: 50%;
+        /* Ajuster la largeur à 50% */
         height: 100%;
-        background-color: #00b894;
-        padding: 20px;
-        box-sizing: border-box;
-        overflow-y: auto;
-        transition: display 0.3s ease-in-out;
-    }
+        background-color: #28a745;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px 20px 20px;
+        /* Ajuster le padding selon vos besoins */
 
-    .links.open {
-        display: flex;
+        transition: right 0.3s ease;
+        /* Transition douce pour l'animation */
+        z-index: 2;
+        /* S'assurer que le panneau apparaisse au-dessus du header */
     }
 
     .links a {
-        padding: 10px;
-        font-size: 18px;
-        width: 100%;
-        text-align: left;
-    }
-
-    .content {
-        align-items: flex-start;
-    }
-
-    .links.open::before {
-        display: block;
         color: white;
-        font-size: 24px;
-        margin-bottom: 20px;
-        text-align: center;
-        width: 100%;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
     }
+
+    .links.active {
+        right: 0;
+        /* Afficher le panneau latéral */
+        display: flex;
+        /* Afficher le contenu */
+    }
+
+   
+    .hamburger-icon,.close-icon {
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        /* Placer l'icône hamburger à droite */
+        font-size: 30px;
+        color: white;
+    }
+
+  
 }
 
-.footer {
-    flex-shrink: 0;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px;
-    bottom: 0;
-}
+

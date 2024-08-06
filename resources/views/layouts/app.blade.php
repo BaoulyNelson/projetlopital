@@ -8,6 +8,8 @@
     @yield('styles')
     <!-- Autres balises meta, title, etc. -->
     <link href="{{ asset('css/tables.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
 </head>
 
 <body>
